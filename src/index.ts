@@ -3,6 +3,7 @@ import db from "./utils/database";
 import routes from "./routes/api";
 import bodyParser from "body-parser";
 import docs from "./docs/route";
+import path from "path";
 
 const PORT = 3000;
 
@@ -14,7 +15,7 @@ async function init() {
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-
+    app.use(express.static(path.join(__dirname, '../public')));
     app.use("/api", routes);
     docs(app);
 
