@@ -1,7 +1,7 @@
 /**
  * src/controllers/order.controller.ts
  */
-import { Request, Response } from "express";
+import { Response } from "express";
 
 import {
   create,

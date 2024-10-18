@@ -1,11 +1,7 @@
 import mongoose, { Types } from "mongoose";
 import UserModel from "./user.model";
 import mail from "../utils/mail";
-import { ZOHO_MAIL_USER } from "../utils/env";
 import ProductsModel from "./products.model";
-import {
-  update,
-} from "../services/product.service";
 export interface OrderItem {
   name: string;
   productId: Types.ObjectId;
@@ -87,7 +83,7 @@ OrderSchema.pre("save", async function (next) {
   });
 
   if (isQuantityValid) {
-    return next(new Error("Order quantity harus lebih kecil dari  qty product"));
+    return next(new Error("Order quantity harus lebih kecil dari qty product"));
   }
 
   next();
@@ -110,7 +106,7 @@ OrderSchema.post("save", async function (doc, next) {
     customerName: user?.fullName,
     orderItems: this.orderItems,
     grandTotal: this.grandTotal,
-    contactEmail: "indahbahrina@gmail.com",
+    contactEmail: "admin@gmail.com",
     year: 2024,
     companyName: "Indah Store"
   });
@@ -122,7 +118,6 @@ OrderSchema.post("save", async function (doc, next) {
   });
   next();
 });
-
 
 const OrderModel = mongoose.model("Order", OrderSchema);
 
