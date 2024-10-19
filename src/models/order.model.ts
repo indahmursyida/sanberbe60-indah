@@ -107,7 +107,7 @@ OrderSchema.post("save", async function (doc, next) {
     orderItems: this.orderItems,
     grandTotal: this.grandTotal,
     contactEmail: "admin@gmail.com",
-    year: 2024,
+    year: new Date().getFullYear(),
     companyName: "Indah Store"
   });
 

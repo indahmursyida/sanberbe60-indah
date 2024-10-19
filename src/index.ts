@@ -19,8 +19,6 @@ async function init() {
     app.use("/api", routes);
     docs(app);
 
-    // http://localhost:3000/api
-
     app.listen(PORT, () => {
       console.log(`Server is running at http://localhost:${PORT}`);
     });
