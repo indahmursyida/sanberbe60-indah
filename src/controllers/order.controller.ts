@@ -44,6 +44,9 @@ export default {
   async findAll(req: IRequestWithUser, res: Response) {
     /**
      #swagger.tags = ['Orders']
+     #swagger.security = [{
+      "bearerAuth": []
+     }]
      */
     try {
       const {
