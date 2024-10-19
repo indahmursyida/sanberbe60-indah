@@ -11,6 +11,8 @@ export const findAll = async (
   page: number = 1
 ): Promise<Order[]> => {
   const result = await OrderModel.find({ createdBy: userId })
+    .populate("orderItems.productId")
+    .populate("createdBy")
     .limit(limit)
     .skip((page - 1) * limit)
     .sort({ createdAt: -1 });
