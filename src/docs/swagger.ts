@@ -8,8 +8,8 @@ const doc = {
     },
     servers: [
         {
-            url: "http://localhost:3000/api",
-            description: "Local Server",
+            url: "https://sanberbe60-indah.vercel.app/api",
+            description: "Vercel",
         },
     ],
     components: {
